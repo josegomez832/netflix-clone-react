@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&family=Roboto:wght@900&display=swap');
+
+body{
+  background:#000;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight:300;
+}
+ul{
+  padding:0;
+}
+.navbar {
+  position: relative;
+  z-index: 4;
+  position:fixed;
+  width:100%;
+  background:transparent;
+  transition:450ms;
+}
+.sticky{
+  background:#000;
+}
+ul.nav{
+  display:flex;
+  list-style:none;
+  justify-content: space-between;
+  align-items: center;;
+  padding: 0;
+    max-width: 95%;
+    margin: 0 auto;
+}
+.logo{
+  max-width:115px;
+}
+h1, h2, h3, h4, h5{
+  font-family: 'Roboto', sans-serif;
+  font-weight:900;
+  margin: 0;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+h4{
+  font-size:1.5rem;
+}
+.row__feed{
+  display:flex;
+  
+  padding:20px 0px;
+  overflow-y:hidden;
+  overflow-x: scroll;
+}
+.row__movie-backdrop a {
+  width: 300px;
+  display: block;
+  margin-right:10px;
+}
+.row__movie-poster a {
+  width: 180px;
+  display: block;
+  margin-right:10px;
+}
+.row__movie h4{
+  font-size:0.9rem;
+}
+.row__movie-backdrop img,
+.row__movie-poster img{
+  transition:transform 450ms;
+  margin-right:10px;
+}
+.row__movie-backdrop img:hover,
+.row__movie-poster img:hover{
+  transform:scale(1.08);
+}

@@ -1,0 +1,20 @@
+ul.casts__data {
+    padding: 0;
+    display: flex;
+    max-width:550px;
+}
+ul.casts__data  li{
+    list-style:none;
+    max-width: 25%;
+    border-radius: 100px;
+    margin-right:10px;
+    text-align: center;
+    text-transform:uppercase;
+}
+ul.casts__data li .casts__image-wrapper {
+    width: 120px;
+    border-radius: 50%;
+    display: block;
+    height: 120px;
+    overflow: hidden;
+}

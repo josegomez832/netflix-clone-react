@@ -1,0 +1,31 @@
+ul.related__data {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 85%;
+    margin: 0px auto 0 auto;
+    z-index: 9;
+    position: relative;
+}
+ul.related__data li{
+    width:33%;
+    list-style: none;
+    position:relative;
+}
+ul.related__data li a{
+    display:block;
+    position:relative;
+}
+ul.related__data li img {
+    max-width: 100%;
+}
+ul.related__data span {
+    z-index: 2;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    background: rgb(0 0 0 / 64%);
+    padding: 10px;
+    font-weight: 800;
+}

@@ -1,0 +1,13 @@
+.hero_row{
+    background-size:cover;
+    position:relative;
+}
+
+.featured__panel-content {
+    padding-top: 20%;
+    padding-bottom: 18%;
+    max-width: 550px;
+    margin-left: 5%;
+    position: relative;
+    z-index: 2;
+}
