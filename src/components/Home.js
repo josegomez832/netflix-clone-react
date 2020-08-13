@@ -19,12 +19,14 @@ export class Home extends Component {
 
       
     return (
-      <div className="row">
+      <div className="page__wrapper">
         <Hero />
-        <Popular />
-        <TopRated />
-        <Upcoming />
-        <NowPlaying />
+        <div className="row">
+          <Popular />
+          <TopRated />
+          <Upcoming />
+          <NowPlaying />
+        </div>        
     </div>
      
     )

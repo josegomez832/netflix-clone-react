@@ -24,12 +24,6 @@ export class Navbar extends Component {
             <li>
               <Link to="/"><img src={logo} alt="Netflix Clone" className="logo" /></Link>
             </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/"><i className="fas fa-bars"></i></Link>
-            </li>
           </ul>
           </div>
       

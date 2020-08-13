@@ -18,11 +18,12 @@ ul{
 }
 .sticky{
   background:#000;
+  position: fixed;
 }
 ul.nav{
   display:flex;
   list-style:none;
-  justify-content: space-between;
+  justify-content:center;
   align-items: center;;
   padding: 0;
     max-width: 95%;
@@ -40,6 +41,16 @@ h1, h2, h3, h4, h5{
 }
 h4{
   font-size:1.5rem;
+}
+.row{
+  max-width:96%;
+  margin:0 auto;
+}
+.row__feed-panel{
+  padding:30px 0px;
+}
+.row__feed-panel h2{
+  margin:0;
 }
 .row__feed{
   display:flex;
@@ -69,4 +80,18 @@ h4{
 .row__movie-backdrop img:hover,
 .row__movie-poster img:hover{
   transform:scale(1.08);
+}
+.footer p{
+  text-align:center;
+  font-size:10px;
+  text-transform: uppercase;
+  padding:10px 0px;
+}
+@media(max-width:767px){
+  .navbar {
+    position: relative;
+  }
+  .logo{
+    margin-top:5px;
+  }
 }

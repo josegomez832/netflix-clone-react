@@ -28,7 +28,7 @@ export class Upcoming extends Component {
         
           
     return (
-      <div className="row">
+      <div className="row__feed-panel">
          <h2>Upcoming</h2>
               <div className="row__feed">
                   

@@ -33,19 +33,17 @@ componentDidMount(){
       const {movies} = this.state;
       
     return (
-      <div className="row">
-       
-         <button onClick={this.clickButton}>Button Click</button>
-          
+      <div className="row__feed-panel">
+                
             <h2>Popular</h2>
             <div className="row__feed">
               {/*https://image.tmdb.org/t/p/original/ */}
               {this.state.movies.results.map( (movie, id) =>
               
-                  <div className="row__movie-backdrop" key={movie.id}>
+                  <div className="row__movie-poster" key={movie.id}>
                     <Link to={`/${movie.id}`}>
-                      <img src={"https://image.tmdb.org/t/p/original"+movie.backdrop_path} />
-                      <h4>{movie.title}</h4>
+                      <img src={"https://image.tmdb.org/t/p/original"+movie.poster_path} />
+                     
                     {/*<Video id={movie.id} /> */} 
                     </Link>    
                   </div>  

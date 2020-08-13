@@ -11,3 +11,28 @@
     position: relative;
     z-index: 2;
 }
+.btn {
+    background: #fff;
+    color: #000;
+    text-decoration: none;
+    padding: 10px 45px;
+    text-transform: uppercase;
+    border-radius: 25px;
+    font-family: 'Roboto', sans-serif;
+    font-weight:900;
+}
+@media(max-width:767px){
+    .hero_row{
+        background-size:100%;
+        background-repeat: no-repeat;
+    }
+    .hero_row h1{
+        font-size:2.5rem;
+    }
+    .featured__panel-content{
+        max-width:370px;
+    }
+    .hero_row .single__view-gradient {
+        height: 65%;
+    }
+}

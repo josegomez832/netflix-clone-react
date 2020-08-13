@@ -6,54 +6,67 @@ import {
 } from "react-router-dom";
 import Cast from './Cast'
 import Related from './Related'
+import ReactPlayer from 'react-player/youtube'
+import smoothscroll from 'smoothscroll-polyfill';
+ 
+// kick off the polyfill!
+smoothscroll.polyfill();
 const axios = require('axios');
 
 function Single(){
  
   let { id } = useParams();
 
-  const [data, setData] = useState({
-    genres:[]
-  });
- 
+
+  const [resp, setAPIData] = useState({ data: [], results: [] });
+
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios(
-        `https://api.themoviedb.org/3/movie/${id}?api_key=3fe0146e60722e9fc1e2731f6e6bea06&language=en-US`,
+      const respMovie = await axios(
+        `https://api.themoviedb.org/3/movie/${id}?api_key=3fe0146e60722e9fc1e2731f6e6bea06&language=en-US`
       );
- 
-      setData(result.data);
+      const respVideos = await axios(
+        `https://api.themoviedb.org/3/movie/${id}/videos?api_key=3fe0146e60722e9fc1e2731f6e6bea06&language=en-US`
+      );
+
+      setAPIData({ data: respMovie.data, results: respVideos.data });
     };
-    // eslint-disable-line react-hooks/exhaustive-deps
+
     fetchData();
   }, []);
+    if (!resp.results.results) {
+      return <span>Loading...</span>;
+  }
 
-  //console.log(data);
     return (
       
       <div className="single__view-panel">
           
           <div className="hero" style={{ 
-            backgroundImage: `url(${"https://image.tmdb.org/t/p/original"+data.backdrop_path})`
+            backgroundImage: `url(${"https://image.tmdb.org/t/p/original"+resp.data.backdrop_path})`
             }}>
             <div className="single__view-gradient"></div>
             <div className="single__view-content">
-                <h1>{data.title}</h1>
-                <h4>{data.tagline}</h4>
+                <h1>{resp.data.title}</h1>
+                <h4>{resp.data.tagline}</h4>
                 
-                <ul className="genres">
-                      {data.genres.map( (genre, key) =>
-                        <li key={key}>{genre.name}</li>
-                      )}
-                </ul>
-                <p>{data.overview}</p>
-                <p><a href="#trailer" className="btn btn-play" id="trailerBTN">Play Trailer</a></p>
-                <Cast id={data.id} />
+                <p>{resp.data.overview}</p>
+               
+                <Cast id={resp.data.id} />
             </div>
   
         </div>
-       
-        <Related id={data.id} />
+        <div id="trailer">
+          <ReactPlayer
+              url={'https://www.youtube.com/watch?v='+resp.results.results[0].key}
+              light={true}
+              playing={false}
+              className='react-player'
+                width='100%'
+                height='100%'
+              />
+          </div>
+        <Related id={resp.data.id} />
       </div>
     )
   

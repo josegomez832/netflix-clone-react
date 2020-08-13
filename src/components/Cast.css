@@ -2,12 +2,14 @@ ul.casts__data {
     padding: 0;
     display: flex;
     max-width:550px;
+    margin-top:30px;
+    margin-bottom:30px;
 }
 ul.casts__data  li{
     list-style:none;
     max-width: 25%;
     border-radius: 100px;
-    margin-right:10px;
+    margin-right:20px;
     text-align: center;
     text-transform:uppercase;
 }
@@ -17,4 +19,11 @@ ul.casts__data li .casts__image-wrapper {
     display: block;
     height: 120px;
     overflow: hidden;
+    margin:0 auto;
+}
+@media(max-width:767px){
+    ul.casts__data li .casts__image-wrapper {
+        width: 80px;
+        height: 80px;
+    }
 }

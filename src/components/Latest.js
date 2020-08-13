@@ -23,14 +23,14 @@ export class Video extends Component {
         
           
     return (
-      <div>
+      <div className="row__feed-panel">
          
-              <div class="row">
+              
                   <h2>Latest</h2>
                   <h4>{this.state.latest.poster_path}</h4>
                 <img src={"https://image.tmdb.org/t/p/w200"+this.state.latest.poster_path} />
                
-              </div>
+              
  
         
         

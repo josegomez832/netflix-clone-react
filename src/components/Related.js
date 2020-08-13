@@ -22,24 +22,26 @@ function Related(props){
         
     })
   });
- 
- 
-    return (
-      <div className="related">
-        <h3>Similar Videos</h3>
-        <ul className="related__data">
-          {data.results.slice(0,6).map( (movie, key) =>
-            <li key={key}>
-            <Link to={`/${movie.id}`}>
-              <img src={"https://image.tmdb.org/t/p/original"+movie.backdrop_path} alt={movie.title} />
-              <span>{movie.title}</span>
-              </Link>
-            </li>
-          )}
-        </ul>
-        
-      </div>
-    )
+    if(data.total_results == 0){
+      return null
+    }else{
+      return (
+        <div className="related">
+          <h3>Similar Videos</h3>
+          <ul className="related__data">
+            {data.results.slice(0,6).map( (movie, key) =>
+              <li key={key}>
+              <Link to={`/${movie.id}`}>
+                <img src={"https://image.tmdb.org/t/p/original"+movie.backdrop_path} alt={movie.title} />
+                <span>{movie.title}</span>
+                </Link>
+              </li>
+            )}
+          </ul>
+          
+        </div>
+      )
+    }  
   
 }
 

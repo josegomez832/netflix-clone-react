@@ -29,7 +29,7 @@ export class TopRated extends Component {
         
           
     return (
-      <div className="row">
+      <div className="row__feed-panel">
          <h2>Top Rated</h2>
               <div className="row__feed">
                   

@@ -1,3 +1,10 @@
+.related{
+    padding-top:8%;
+    padding-bottom:8%;
+}
+.related h3{
+    text-align:center;
+}
 ul.related__data {
     display: flex;
     flex-wrap: wrap;
@@ -28,4 +35,10 @@ ul.related__data span {
     background: rgb(0 0 0 / 64%);
     padding: 10px;
     font-weight: 800;
+}
+@media(max-width:767px){
+    ul.related__data li {
+        width: 47%;
+        margin-bottom: 3%;
+    }
 }

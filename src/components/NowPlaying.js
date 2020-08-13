@@ -30,7 +30,7 @@ export class NowPlaying extends Component {
         
           
     return (
-      <div className="row">
+      <div className="row__feed-panel">
          <h2>Now Playing</h2>
               <div className="row__feed">
                   

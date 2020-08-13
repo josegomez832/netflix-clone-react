@@ -36,7 +36,7 @@ export class Hero extends Component {
                   <div className="featured__panel-content">
                     <h1>{feature.title}</h1>
                     <p>{feature.overview}</p>
-                    <Link to={`/${feature.id}`}>View</Link>
+                    <Link to={`/${feature.id}`} className="btn">View</Link>
                  </div>
                 {/*<Video id={movie.id} /> */} 
                
