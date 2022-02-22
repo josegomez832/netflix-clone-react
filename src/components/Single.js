@@ -33,7 +33,7 @@ function Single(){
     };
 
     fetchData();
-  }, []);
+  }, [id]);
     if (!resp.results.results) {
       return <span>Loading...</span>;
   }
